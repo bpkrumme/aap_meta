@@ -11,7 +11,7 @@
         controller_username: 'admin'
         controller_password: 'R3dH4tBr4d!'
         name: "{{ template_name }}"
-        job_type: 'run'
+        job_type: "{{ template_job_type }}"
         inventory: "{{ template_inventory }}"
         project: "{{ template_project }}"
         playbook: "{{ template_playbook }}"
