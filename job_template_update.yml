@@ -1,0 +1,19 @@
+---
+- name: update a job template in AAP
+  hosts: all
+  gather_facts: false
+  become: false
+  tasks:
+    - name: update a job template
+      ansible.controller.job_template:
+        controller_host: 'https://aap-cluster-ctl1.bk.lab'
+        validate_certs: no
+        controller_username: 'admin'
+        controller_password: 'R3dH4tBr4d!'
+        name: "{{ template_name }}"
+        job_type: 'run'
+        inventory: "{{ template_inventory }}"
+        project: "{{ template_project }}"
+        playbook: "{{ template_playbook }}"
+        credentials:
+          - "{{ template_credentials }}"
